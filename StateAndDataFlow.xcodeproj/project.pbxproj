@@ -16,6 +16,7 @@
 		A818D2AD28D2562600CFBC4E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818D2AC28D2562600CFBC4E /* UserManager.swift */; };
 		A818D2AF28D2590B00CFBC4E /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818D2AE28D2590B00CFBC4E /* StarterView.swift */; };
 		ED2679F72AE294F6002A38CC /* TextConuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2679F62AE294F6002A38CC /* TextConuter.swift */; };
+		ED267A172AE3EEFA002A38CC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267A162AE3EEFA002A38CC /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A818D2AC28D2562600CFBC4E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A818D2AE28D2590B00CFBC4E /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		ED2679F62AE294F6002A38CC /* TextConuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConuter.swift; sourceTree = "<group>"; };
+		ED267A162AE3EEFA002A38CC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				A818D29E28D2359E00CFBC4E /* Assets.xcassets */,
 				A818D2A028D2359E00CFBC4E /* Preview Content */,
 				ED2679F62AE294F6002A38CC /* TextConuter.swift */,
+				ED267A162AE3EEFA002A38CC /* StorageManager.swift */,
 			);
 			path = StateAndDataFlow;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				ED2679F72AE294F6002A38CC /* TextConuter.swift in Sources */,
 				A818D2AD28D2562600CFBC4E /* UserManager.swift in Sources */,
 				A818D29B28D2359D00CFBC4E /* StateAndDataFlowApp.swift in Sources */,
+				ED267A172AE3EEFA002A38CC /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
