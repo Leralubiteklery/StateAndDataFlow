@@ -16,7 +16,6 @@ class StorageManager {
     private init() {}
     
     func save(userName: String) {
-        let user = userName
         defaults.set(userName, forKey: "userKey")
     }
     

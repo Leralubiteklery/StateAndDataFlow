@@ -19,11 +19,11 @@ struct ContentView: View {
             Text(timer.counter.formatted())
                 .font(.largeTitle)
                 .padding(.top, 100)
-            Spacer()
-            
-            ButtonView(timer: timer)
+            StartButtonView(timer: timer)
             
             Spacer()
+            
+            LogoutButtonView()
         }
     }
 }
@@ -35,7 +35,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ButtonView: View {
+struct StartButtonView: View {
     @ObservedObject var timer: TimeCounter
     
     var body: some View {
@@ -51,3 +51,26 @@ struct ButtonView: View {
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
     }
 }
+
+struct LogoutButtonView: View {
+    @EnvironmentObject private var user: UserManager
+    
+    var body: some View {
+        Button(action: StorageManager.shared.deleteUser) {
+            Text("Log Out")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+        }
+        .frame(width: 200, height: 60)
+        .background(.blue)
+        .cornerRadius(20)
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
+    }
+    
+    private func logOut() {
+        user.isRegister.toggle()
+        StorageManager.shared.deleteUser()
+    }
+}
+
