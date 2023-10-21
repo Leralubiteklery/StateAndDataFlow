@@ -19,4 +19,16 @@ class StorageManager {
         let user = userName
         defaults.set(userName, forKey: "userKey")
     }
+    
+    func fetchUser() -> String {
+        if let userName = defaults.value(forKey: "userKey") as? String {
+            return userName
+        }
+        return ""
+    }
+    
+    func deleteUser() {
+        let user = ""
+        defaults.set(user, forKey: "userKey")
+    }
 }
