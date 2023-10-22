@@ -8,52 +8,54 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name = ""
-    @EnvironmentObject private var user: UserManager
-    @ObservedObject var textCounter = TextCounter()
-    @State var textColor = Color(.red)
+    @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
         VStack {
-            HStack {
-                TextField("Enter your name", text: $textCounter.text)
-                    .multilineTextAlignment(.center)
-                Text("\(textCounter.counter)")
-                    .foregroundColor(setColor())
-                Spacer()
-            }
-            Button(action: registerUser) {
+            UserNameTF(
+                name: $userManager.user.name,
+                nameIsValid: userManager.nameIsValid
+            )
+            Button (action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("OK")
                 }
-                .disabled(textCounter.text.count < 3)
             }
+            .disabled(!userManager.nameIsValid)
+        }
+        .padding()
+    }
+        
+        private func registerUser() {
+            userManager.user.isRegistered.toggle()
+            DataManager.shared.save(user: userManager.user)
         }
     }
+
+struct UserNameTF: View {
+    @Binding var name: String
+    var nameIsValid = false
     
-    private func registerUser() {
-        if !name.isEmpty {
-            user.name = name
-            StorageManager.shared.save(userName: name)
-            user.isRegister.toggle()
-        }
-    }
-    
-    private func setColor() -> Color {
-        if let counter = Int(textCounter.counter) {
-            if counter >= 3 {
-                textColor = Color(.gray)
-            } else {
-                textColor = Color(.gray)
+    var body: some View {
+        ZStack {
+            TextField("Type your name...", text: $name)
+                .multilineTextAlignment(.center)
+            HStack {
+                Spacer()
+                Text(name.count.formatted())
+                    .font(.callout)
+                    .foregroundColor(nameIsValid ? .green : .red)
+                    .padding([.top, .trailing])
             }
+            .padding(.bottom)
         }
-        return textColor
     }
 }
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(UserManager())
     }
 }
