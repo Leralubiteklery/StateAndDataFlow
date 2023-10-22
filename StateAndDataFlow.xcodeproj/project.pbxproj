@@ -16,6 +16,8 @@
 		A818D2AD28D2562600CFBC4E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818D2AC28D2562600CFBC4E /* UserManager.swift */; };
 		A818D2AF28D2590B00CFBC4E /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818D2AE28D2590B00CFBC4E /* StarterView.swift */; };
 		ED267A192AE4054E002A38CC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267A182AE4054E002A38CC /* DataManager.swift */; };
+		ED267A1B2AE51BCF002A38CC /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267A1A2AE51BCF002A38CC /* ButtonView.swift */; };
+		ED267A1D2AE51CDD002A38CC /* ButtonAppearanceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267A1C2AE51CDD002A38CC /* ButtonAppearanceModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A818D2AC28D2562600CFBC4E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A818D2AE28D2590B00CFBC4E /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		ED267A182AE4054E002A38CC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ED267A1A2AE51BCF002A38CC /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		ED267A1C2AE51CDD002A38CC /* ButtonAppearanceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppearanceModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +70,12 @@
 				ED267A182AE4054E002A38CC /* DataManager.swift */,
 				A818D2AA28D2553900CFBC4E /* RegisterView.swift */,
 				A818D2AE28D2590B00CFBC4E /* StarterView.swift */,
+				ED267A1A2AE51BCF002A38CC /* ButtonView.swift */,
 				A818D2A828D24E1E00CFBC4E /* TimeCounter.swift */,
 				A818D2AC28D2562600CFBC4E /* UserManager.swift */,
 				A818D29E28D2359E00CFBC4E /* Assets.xcassets */,
 				A818D2A028D2359E00CFBC4E /* Preview Content */,
+				ED267A1C2AE51CDD002A38CC /* ButtonAppearanceModifier.swift */,
 			);
 			path = StateAndDataFlow;
 			sourceTree = "<group>";
@@ -152,8 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED267A1D2AE51CDD002A38CC /* ButtonAppearanceModifier.swift in Sources */,
 				A818D2A928D24E1E00CFBC4E /* TimeCounter.swift in Sources */,
 				ED267A192AE4054E002A38CC /* DataManager.swift in Sources */,
+				ED267A1B2AE51BCF002A38CC /* ButtonView.swift in Sources */,
 				A818D2AB28D2553900CFBC4E /* RegisterView.swift in Sources */,
 				A818D2AF28D2590B00CFBC4E /* StarterView.swift in Sources */,
 				A818D29D28D2359D00CFBC4E /* ContentView.swift in Sources */,
