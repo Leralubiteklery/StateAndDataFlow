@@ -73,9 +73,9 @@
 				ED267A1A2AE51BCF002A38CC /* ButtonView.swift */,
 				A818D2A828D24E1E00CFBC4E /* TimeCounter.swift */,
 				A818D2AC28D2562600CFBC4E /* UserManager.swift */,
+				ED267A1C2AE51CDD002A38CC /* ButtonAppearanceModifier.swift */,
 				A818D29E28D2359E00CFBC4E /* Assets.xcassets */,
 				A818D2A028D2359E00CFBC4E /* Preview Content */,
-				ED267A1C2AE51CDD002A38CC /* ButtonAppearanceModifier.swift */,
 			);
 			path = StateAndDataFlow;
 			sourceTree = "<group>";
