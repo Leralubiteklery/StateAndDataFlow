@@ -9,21 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var timer = TimeCounter()
-    @EnvironmentObject private var user: UserManager
+    @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
         VStack {
-            Text("Hi, \(user.name)")
+            Text("Hi, \(userManager.user.name)")
                 .font(.largeTitle)
-                .padding(.top, 100)
+                .offset(x: 0, y: 100)
             Text(timer.counter.formatted())
                 .font(.largeTitle)
-                .padding(.top, 100)
-            StartButtonView(timer: timer)
+                .offset(x: 0, y: 200)
             
             Spacer()
             
-            LogoutButtonView()
+            VStack {
+                Spacer()
+                
+                ButtonView(title: timer.buttonTitle, color: .red) {
+                    timer.startTimer()
+                }
+                
+                Spacer()
+                
+                ButtonView(title: "Log out", color: .blue) {
+                    DataManager.shared.clear(userManager: userManager)
+                }
+            }
         }
     }
 }
@@ -35,42 +46,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct StartButtonView: View {
-    @ObservedObject var timer: TimeCounter
-    
-    var body: some View {
-        Button(action: timer.startTimer) {
-            Text(timer.buttonTitle)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-        .frame(width: 200, height: 60)
-        .background(.red)
-        .cornerRadius(20)
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
-    }
-}
-
-struct LogoutButtonView: View {
-    @EnvironmentObject private var user: UserManager
-    
-    var body: some View {
-        Button(action: StorageManager.shared.deleteUser) {
-            Text("Log Out")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-        .frame(width: 200, height: 60)
-        .background(.blue)
-        .cornerRadius(20)
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
-    }
-    
-    private func logOut() {
-        user.isRegister.toggle()
-        StorageManager.shared.deleteUser()
-    }
-}
 
